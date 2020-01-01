@@ -14,7 +14,7 @@ public class PasswordManager {
 		//cap 65 - 90
 		//small 97 - 122
 		//number 48 - 57
-		
+		String password = "";
 		int totalLength = str1.length() + str2.length() + str3.length();
 		int capLetterPosition = (totalLength)/divider(str1, str2, str3);
 		int symbolPosition = (int)Math.sqrt(totalLength);
@@ -23,9 +23,26 @@ public class PasswordManager {
 		{
 			for(int i = 0; i <= s.length() - 1; i ++)
 			{
-				char letter = s.charAt(i);
-				char temp = Character.toLowerCase(letter); //all lower case
-				Character.getNumericValue(temp);
+				char current = s.charAt(i);
+				if(Character.isDigit(current))
+				{
+					int charVal = Character.getNumericValue(current);
+					
+					if(totalLength % 2 == 0 && i % 2 == 0) //if total length is even
+						password += Character.toString((char)(charVal + i)); // i + real value
+					else
+						password +=Character.toString((char)((int)Math.sqrt(charVal + totalLength))); //squareroot of real val + total length
+					
+				}
+				else 
+				{
+					char letter = s.charAt(i);
+					char temp = Character.toLowerCase(letter); //all lower case
+//					int tempVal = Character.getNumericValue(temp);
+					
+					int tempVal = (int)temp;
+					int asciiDiff = (122 - tempVal > tempVal - 97);
+				}
 			}
 		}
 		
