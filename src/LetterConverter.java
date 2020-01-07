@@ -17,6 +17,11 @@ public class LetterConverter {
 				int rangeTemp = getLetterRange(temp);
 				generated += (char)rangeTemp;
 			}
+			else if(Character.isDigit(current))
+			{
+				int numberTemp = NumberConverter.getNumber(i,Character.getNumericValue(current));
+				generated += (i%2 == 0) ? (char)(topRange-numberTemp) : (char)(lowRange+numberTemp);
+			}
 		}
 		return generated;
 	}
@@ -34,7 +39,7 @@ public class LetterConverter {
 	public static void main(String[] args)
 	{
 //		char c = (char) 35;
-		System.out.println(LetterConverter.getLetters("coles", "payroll", "adnaan"));
+		System.out.println(LetterConverter.getLetters("woolworths", "talentPay", "adnan321"));
 	}
 
 }
