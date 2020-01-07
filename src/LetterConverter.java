@@ -24,9 +24,9 @@ public class LetterConverter {
 	public static int getLetterRange(int k)
 	{
 		if(k<lowRange)
-			return (k + lowRange)%topRange;
+			return topRange - ((lowRange-k)%25); //z - (a -i)%25
 		else if(k>topRange)
-			return (k%topRange + lowRange);
+			return (k-topRange)%25 + lowRange;
 		else
 			return k;
 	}
