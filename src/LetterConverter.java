@@ -36,10 +36,10 @@ public class LetterConverter {
 			return k;
 	}
 	
-	public static void main(String[] args)
-	{
-//		char c = (char) 35;
-		System.out.println(LetterConverter.getLetters("woolworths", "talentPay", "adnan321"));
-	}
+//	public static void main(String[] args)
+//	{
+////		char c = (char) 35;
+//		System.out.println(LetterConverter.getLetters("woolworths", "talentPay", "adnan321"));
+//	}
 
 }
